@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>Click-Through Rate (CTR) prediction</title>
+  </head>
+  <body>
+    <h1>Click-Through Rate (CTR) prediction</h1>
+
+    <h2>Predict with trained model</h2>
+    <a href='/predict'>Predict with previously trained model</a>
+
+    <br /><br />
+    <h2>Training</h2>
+    Choose parameters to train model
+    <form method=post action="/train"> 
+
+        <h3>Number of samples for training</h3>
+        <select name="number_of_samples">
+            <option value="1000">     1000 samples</option>
+            <option value="10000">  10,000 samples</option>
+            <option value="100000">100,000 samples</option>
+            <!--
+            <option value="1000000">1,000,000 samples</option>
+            <option value="all">     all samples</option>
+            -->
+        </select>
+
+        <br /><br />
+        <h3>Dealing with class imbalance</h3>
+         <select name="balancing">
+            <option value="upsampling">Upsampling (increase class with fewer samples)</option>
+            <option value="downsampling">Downsampling (decrease class with more samples)</option>
+        </select>      
+        
+        <br /><br /><br />
+        <input type=submit value='Train' name='submit_btn'>
+    </form>
+    
+
+  </body>
+</html>

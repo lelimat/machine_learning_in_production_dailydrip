@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>Click-Through Rate (CTR) prediction</title>
+  </head>
+  <body>
+    <h1>Click-Through Rate (CTR) prediction</h1>
+    <h2>Prediction</h2>
+
+    Model trained with {{n_samples}} samples and {{n_features}} features.
+
+    <h3>Select the parameters to see the probability of clicking</h3>
+    <form method=post action="/results">            
+        {% for key, values in dummy_cols_dic.items() %}
+            {{key}}
+            <select name="{{key}}">
+            {% for value in values %}
+                <option value="{{value}}">
+                {{value}}
+                </option>
+            {% endfor %}
+            </select>
+            <br /><br />
+        {% endfor %}
+        <br />
+        <input type=submit value='Predict' name='submit_btn'>
+    </form>
+    <br /><br />
+    Go back to <a href="/">Training</a>
+  </body>
+</html>
